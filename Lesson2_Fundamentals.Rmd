@@ -1,0 +1,6 @@
+---
+title: "Bayesian data analysis in R: Working with Bayesian models"
+output: github_document
+---
+
+Remember, the fundamental interest of a Bayesian approch is to use probabilities, which are definied by **prior** hypotheses and **posterior** corrections to prior hypotheses based on the data. You can work with probability distubutions to describe and compaire data. Working with probability distubutions is based on taking large random samples of the probability distibution if this sample is large enough, each value will occur roughly proportionally often to how probable it is.
