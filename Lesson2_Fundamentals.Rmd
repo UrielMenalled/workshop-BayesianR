@@ -1,6 +1,38 @@
 ---
 title: "Bayesian data analysis in R: Working with Bayesian models"
 output: github_document
+knit: (function(input, encoding) {
+    rmarkdown::render(input, output_dir = "KnittedFiles")
+editor_options: 
+  chunk_output_type: console
 ---
 
-Remember, the fundamental interest of a Bayesian approch is to use probabilities, which are definied by **prior** hypotheses and **posterior** corrections to prior hypotheses based on the data. You can work with probability distubutions to describe and compaire data. Working with probability distubutions is based on taking large random samples of the probability distibution if this sample is large enough, each value will occur roughly proportionally often to how probable it is.
+Remember, the fundamental interest of a Bayesian approach is to use probabilities, which are defined by **prior** hypotheses and **posterior** corrections to prior hypotheses based on the data. You can work with probability distributions to describe and compare data. Working with probability distributions is based on taking large random samples of the probability distribution if this sample is large enough, each value will occur roughly proportionally often to how probable it is.
+
+The prop_model function returns a large random sample (n = 10,000) from the posterior distribution. You can work with these to descibe the output of an experiment where there are 13 trials with 2 successes.
+```{r}
+source("SetUp_Code.R") #loading in packages and the prop_model function
+
+data <- c(0,1,0,0,0,0,1,0,0,0,0,0,0)
+prop_model(data)
+```
+
+Based on this experiment, you can see that the probability of success should be around 2/13 = 15%. This can be simulated by taking the median of prop_model, which shows the proportion of success from 10,000 experiments, each with 100 trials. The median is often used instead of the mean because we are working with distributions and interested in their center. Notice that the results of median(prop_model(data)) is not exactly 15% because it is based on modifying the prior distribution. In the case of this experiment, we used an uninformative prior where all outcomes had equal probabilities of success.
+```{r}
+posterior <- prop_model(data)
+head(posterior) #each of these are the probability of success based on the n = 13 posterior distribution
+median(posterior)
+```
+
+There are several other ways to describe the probability distribution we can crest a credibility interval of the true effect of the posterior by getting confidence intervals
+```{r}
+hist(posterior)
+quantile(posterior, c(0.05, 0.95)) #95-5 = 90% confidence interval
+sum(posterior > 0.07)/length(posterior) #93% of experiments resulted in a success rate over 7%
+```
+
+Now, prop_model is running under the hood, but there are various Bayesian models that could be used. To understand what fundamentally happening, let's start by  replicating prop_model by hand. Then, we can see how using a more informative prior changes the posterior probability distibution
+```{r}
+
+```
+
