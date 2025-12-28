@@ -1,11 +1,11 @@
-Baysian data analysis in R: Introduction
+Bayesian data analysis in R: Introduction
 ================
 
 Bayesian inference is a method for figuring out unknown quantities given
 some known facts. There are other inference methods for this, but what
 makes Bayesian inference special is that it uses probability to describe
 the uncertainty. It’s really just about using probability, where
-probability is a number between 0 and 1. Fundamentally, what Baysian
+probability is a number between 0 and 1. Fundamentally, what Bayesian
 analysis is doing is *updating* the probability distribution to reflect
 data.
 
