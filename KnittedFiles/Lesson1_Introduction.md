@@ -22,7 +22,7 @@ data <- c()
 prop_model(data)
 ```
 
-![](/Users/urielmenalled/Desktop/workshop-BayesianR/KnittedFiles/Lesson1_Introduction_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](figures/unnamed-chunk-3-1.png)<!-- -->
 
 ``` r
 #The function prop_model implements a Bayesian model that assumes that: 1) The data is a vector of successes and failures represented by 1s and 0s; 2) There is an unknown underlying proportion of success; 3) Prior to being updated with data, any underlying proportion of success is equally likely.
@@ -41,7 +41,7 @@ data <- c(0)
 prop_model(data)
 ```
 
-![](/Users/urielmenalled/Desktop/workshop-BayesianR/KnittedFiles/Lesson1_Introduction_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](figures/unnamed-chunk-4-1.png)<!-- -->
 
 If we re-run the experiment and the second patient was cured, the
 probability of having a success changes…
@@ -51,7 +51,7 @@ data <- c(0,1)
 prop_model(data)
 ```
 
-![](/Users/urielmenalled/Desktop/workshop-BayesianR/KnittedFiles/Lesson1_Introduction_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](figures/unnamed-chunk-5-1.png)<!-- -->
 
 Remember, the fundamental idea of Bayesian analysis is that you are
 updating a prior probability with data to look at increasingly powerful
@@ -66,6 +66,6 @@ data <- c(0,1,0,0,0,1)
 prop_model(data)
 ```
 
-![](/Users/urielmenalled/Desktop/workshop-BayesianR/KnittedFiles/Lesson1_Introduction_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](figures/unnamed-chunk-6-1.png)<!-- -->
 
 **CONGRATULATIONS, you’ve just used a Bayesian model!**

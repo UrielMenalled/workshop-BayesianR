@@ -21,7 +21,9 @@ knitr::opts_chunk$set(
   echo = TRUE,     # show code
   results = 'hide', # hide printed output
   message = FALSE,  # hide messages
-  warning = FALSE   # hide warnings
+  warning = FALSE,   # hide warnings
+  fig.path = "figures/",      # Save plots to figures folder
+  fig.keep = 'all'            # Keep all figures
 )
 ```
 
