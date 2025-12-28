@@ -10,10 +10,21 @@ editor_options:
 ---
 
 Remember, the fundamental interest of a Bayesian approach is to use probabilities, which are defined by **prior** hypotheses and **posterior** corrections to prior hypotheses based on the data. You then work with probability distributions to describe and compare data. Working with probability distributions is based on taking large random samples of the probability distribution if this sample is large enough, each value will occur roughly proportionally often to how probable it is.
-```{r}
+```{r include=FALSE}
+#Show code and plots, hide printed output
+knitr::opts_chunk$set(
+  echo = TRUE,     # hide code
+  results = 'hide', # hide printed output
+  message = FALSE,  # hide messages
+  warning = FALSE   # hide warnings
+)
+```
+
+```{r include=FALSE}
 source("SetUp_Code.R") #loading in packages and the prop_model function
 set.seed(123)
 ```
+
 
 To understand what fundamentally happening, let's start by doing a Bayesian analysis by hand. Let's assume we have an experiment with 2/13 successes, meaning we KNOW that the success rate is 15%
 ```{r}

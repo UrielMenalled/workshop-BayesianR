@@ -16,7 +16,18 @@ The function prop_model implements a Bayesian model that assumes that:
 - There is an unknown underlying proportion of success.
 - Prior to being updated with data, any underlying proportion of success is equally likely.
 ```{r include=FALSE}
-source("SetUp_Code.R") #loading nessary packages and functions for workshop 
+#Show code and plots, hide printed output
+knitr::opts_chunk$set(
+  echo = TRUE,     # hide code
+  results = 'hide', # hide printed output
+  message = FALSE,  # hide messages
+  warning = FALSE   # hide warnings
+)
+```
+
+```{r include=FALSE}
+source("SetUp_Code.R") #loading in packages and the prop_model function
+set.seed(123)
 ```
 
 Let’s start by seeing what happens when we run the model with no data.
