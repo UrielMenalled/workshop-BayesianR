@@ -1,10 +1,6 @@
 ---
 title: "Bayesian data analysis in R: Introduction"
 output: github_document
-knit: 
-  (function(input, encoding) {
-    rmarkdown::render(input, output_dir = "KnittedFiles")
-  })
 editor_options: 
   chunk_output_type: console
 ---
@@ -15,19 +11,6 @@ The function prop_model implements a Bayesian model that assumes that:
 - The data is a vector of successes and failures represented by 1s and 0s.
 - There is an unknown underlying proportion of success.
 - Prior to being updated with data, any underlying proportion of success is equally likely.
-```{r include=FALSE}
-#Show code and plots, hide printed output
-knitr::opts_chunk$set(
-  echo = TRUE,     # show code
-  results = 'hide', # hide printed output
-  message = FALSE,  # hide messages
-  warning = FALSE,   # hide warnings
-  fig.path = "figures/",  # <-- RELATIVE to KnittedFiles/
-  fig.show = 'asis',  # show plots inline
-  dev = 'png',        # save plots as PNG
-  fig.keep = 'all'            # Keep all figures
-)
-```
 
 ```{r include=FALSE}
 source("SetUp_Code.R") #loading in packages and the prop_model function
