@@ -18,7 +18,7 @@ The function prop_model implements a Bayesian model that assumes that:
 ```{r include=FALSE}
 #Show code and plots, hide printed output
 knitr::opts_chunk$set(
-  echo = TRUE,     # hide code
+  echo = TRUE,     # show code
   results = 'hide', # hide printed output
   message = FALSE,  # hide messages
   warning = FALSE   # hide warnings
