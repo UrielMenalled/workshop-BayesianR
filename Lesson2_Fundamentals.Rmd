@@ -1,25 +1,11 @@
 ---
 title: "Bayesian data analysis in R: Working with Bayesian models"
 output: github_document
-knit: 
-  (function(input, encoding) {
-    rmarkdown::render(input, output_dir = "KnittedFiles")
-  })
 editor_options: 
   chunk_output_type: console
 ---
 
 Remember, the fundamental interest of a Bayesian approach is to use probabilities, which are defined by **prior** hypotheses and **posterior** corrections to prior hypotheses based on the data. You then work with probability distributions to describe and compare data. Working with probability distributions is based on taking large random samples of the probability distribution if this sample is large enough, each value will occur roughly proportionally often to how probable it is.
-```{r include=FALSE}
-#Show code and plots, hide printed output
-knitr::opts_chunk$set(
-  echo = TRUE,     # hide code
-  results = 'hide', # hide printed output
-  message = FALSE,  # hide messages
-  warning = FALSE   # hide warnings
-)
-```
-
 ```{r include=FALSE}
 source("SetUp_Code.R") #loading in packages and the prop_model function
 set.seed(123)
@@ -27,7 +13,7 @@ set.seed(123)
 
 
 To understand what fundamentally happening, let's start by doing a Bayesian analysis by hand. Let's assume we have an experiment with 2/13 successes, meaning we KNOW that the success rate is 15%
-```{r}
+```{r L2.1}
 #replicating the example above, if there are 2/13 = 15% successes
 prop_success <- 0.15
 n_samples <- 13
@@ -42,7 +28,7 @@ quantile(rbinom(n = 10000, size = 13, prob = 0.15), c(0.05, 0.95)) #based on 10,
 The example above shows how we can create data from known parameters (we knew 15% success). But often we have data and want to predict parameters.
 
 First we create a prior. If we don't want to make any assumptions of the data we can use an uninformative prior, where all outcomes are equally probable.
-```{r}
+```{r L2.2}
 proportion_success_uninformative <- runif(n = 10000, min = 0.0, max = 1.0)
 hist(proportion_success_uninformative) #this tells you that there is equal likelihood of 0-100% success
 
@@ -53,7 +39,7 @@ prior_uninformative <- data.frame(proportion_success_uninformative, n_success_un
 ```
 
 Then, we modify the prior probability distribution based on the data from the experiment. Sticking with the example, say we run an experiment and find that out of the 13 samples there are 2 successes
-```{r}
+```{r L2.3}
 posterior_uninformative <- prior_uninformative[prior_uninformative$n_success_uninformative == 2,] #telling out model that we ran an experiment an saw 2 successes out of 13 samples
 hist(posterior_uninformative$proportion_success_uninformative)
 median(posterior_uninformative$proportion_success_uninformative) #19% success
@@ -62,7 +48,7 @@ median(posterior_uninformative$proportion_success_uninformative) #19% success
 Our Bayesian model predicts that the success rate is 19%, that's close to 15% success but not exact... which is because this is a modification of an uninformative prior. We can get closer to the "truth" through 1) by feeding new results into the Bayesian model or 2) using a more informative prior
 
 Let's say we re-run the experiment and again find 2/13 successes again
-```{r}
+```{r L2.4}
 #starting with the proportion successes from the first set of results
 proportion_success_update <- posterior_uninformative$proportion_success_uninformative #stripping the proportion success from posterior_uninformative and using it for priors in for the update
 hist(proportion_success_update)
@@ -78,13 +64,13 @@ median(posterior_update$proportion_success_update) #17% success
 ```
 
 This idea of iteratively improving the model is key to Bayesian analysis. prop_model shows how this narrows model fit.
-```{r}
+```{r L2.5}
 data <- c(0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0)
 prop_model(data)
 ```
 
 Instead of an uninformative prior, let's assume we *know* that the success rate will be between 10 and 20%
-```{r}
+```{r L2.6}
 proportion_success_informative <- runif(n = 10000, min = 0.10, max = 0.20)
 hist(proportion_success_informative, xlim = c(0,1))
 
@@ -98,7 +84,7 @@ median(posterior_informative$proportion_success_informative) #15% success, perfe
 ```
 
 Note that if your prior is wrong, your Bayesian model will ALWAYS be wrong. For example, say that you state that the success rate should be between 30 and 40%. The model will break apart.
-```{r}
+```{r L2.7}
 proportion_success_informativeWRONG <- runif(n = 10000, min = 0.30, max = 0.40)
 hist(proportion_success_informativeWRONG, xlim = c(0,1))
 
