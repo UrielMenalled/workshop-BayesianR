@@ -11,6 +11,10 @@ The function prop_model implements a Bayesian model that assumes that:
 - The data is a vector of successes and failures represented by 1s and 0s.
 - There is an unknown underlying proportion of success.
 - Prior to being updated with data, any underlying proportion of success is equally likely. 
+```{r include=FALSE}
+knitr::opts_knit$set(output.dir = "KnittedFiles")
+knitr::opts_chunk$set(fig.path = "KnittedFiles/figures/")
+```
 
 ```{r include=FALSE}
 source("SetUp_Code.R") #loading in packages and the prop_model function
@@ -19,7 +23,7 @@ set.seed(123) #Randomization set
 
 Let’s start by seeing what happens when we run the model with no data.
 ```{r L1.1}
-data <- c() #empty data file
+data <- c()
 prop_model(data)
 #The function prop_model implements a Bayesian model that assumes that: 1) The data is a vector of successes and failures represented by 1s and 0s; 2) There is an unknown underlying proportion of success; 3) Prior to being updated with data, any underlying proportion of success is equally likely.
 ```
