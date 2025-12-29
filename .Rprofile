@@ -1,5 +1,3 @@
-knitr::opts_knit$set(output.dir = "KnittedFiles")
-
 # Set default chunk options:
 # - show code
 # - show plots
