@@ -1,7 +1,3 @@
-knitr::opts_knit$set(
-  output.dir = "KnittedFiles"   # All knitted files go here
-)
-
 knitr::opts_chunk$set(
   echo = TRUE,     # show code
   results = 'hide', # hide printed output
