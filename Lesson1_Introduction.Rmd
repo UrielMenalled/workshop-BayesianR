@@ -20,8 +20,6 @@ The function prop_model implements a Bayesian model that assumes that:
 source("SetUp_Code.R") #loading in packages and the prop_model function
 set.seed(123)
 
-knitr::opts_knit$set(output.dir = "KnittedFiles")
-
 knitr::opts_chunk$set(
   echo = TRUE,
   message = FALSE,  # hide messages
