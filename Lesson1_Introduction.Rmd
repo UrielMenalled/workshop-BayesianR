@@ -18,7 +18,7 @@ The function prop_model implements a Bayesian model that assumes that:
 
 ```{r include=FALSE}
 source("SetUp_Code.R") #loading in packages and the prop_model function
-set.seed(123)
+set.seed(123) #Randomization set
 ```
 
 Let’s start by seeing what happens when we run the model with no data.
