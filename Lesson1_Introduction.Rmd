@@ -3,6 +3,10 @@ title: "Bayesian data analysis in R: Introduction"
 output: github_document
 editor_options: 
   chunk_output_type: console
+knit: 
+  (function(input, encoding) {
+    rmarkdown::render(input, output_dir = "KnittedFiles")
+  })  
 ---
 
 Bayesian inference is a method for figuring out unknown quantities given some known facts. There are other inference methods that do this, but what makes Bayesian inference special is that it uses probability to describe the uncertainty. It’s really just about using probability, where probability is a number between 0 and 1. Fundamentally, what Bayesian analysis is doing is *updating* the probability distribution to reflect data.
@@ -12,9 +16,7 @@ The function prop_model implements a Bayesian model that assumes that:
 - There is an unknown underlying proportion of success.
 - Prior to being updated with data, any underlying proportion of success is equally likely. 
 ```{r include=FALSE}
-
-knitr::opts_knit$set(output.dir = here::here("KnittedFiles"))
-knitr::opts_chunk$set(fig.path = here::here("KnittedFiles/Figures"))
+knitr::opts_chunk$set(fig.path = here::here("KnittedFiles/figures/"))
 ```
 
 ```{r include=FALSE}
