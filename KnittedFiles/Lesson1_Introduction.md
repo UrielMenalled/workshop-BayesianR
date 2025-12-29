@@ -20,10 +20,13 @@ Let’s start by seeing what happens when we run the model with no data.
 ``` r
 data <- c()
 prop_model(data)
-#The function prop_model implements a Bayesian model that assumes that: 1) The data is a vector of successes and failures represented by 1s and 0s; 2) There is an unknown underlying proportion of success; 3) Prior to being updated with data, any underlying proportion of success is equally likely.
 ```
 
 ![](KnittedFiles/figures/L1.1-1.png)<!-- -->
+
+``` r
+#The function prop_model implements a Bayesian model that assumes that: 1) The data is a vector of successes and failures represented by 1s and 0s; 2) There is an unknown underlying proportion of success; 3) Prior to being updated with data, any underlying proportion of success is equally likely.
+```
 
 We get a big blue square representing a uniform probability
 distribution, indicating that any proportion of successes has equal
