@@ -10,7 +10,7 @@ Bayesian inference is a method for figuring out unknown quantities given some kn
 The function prop_model implements a Bayesian model that assumes that:
 - The data is a vector of successes and failures represented by 1s and 0s.
 - There is an unknown underlying proportion of success.
-- Prior to being updated with data, any underlying proportion of success is equally likely.
+- Prior to being updated with data, any underlying proportion of success is equally likely. 
 
 ```{r include=FALSE}
 source("SetUp_Code.R") #loading in packages and the prop_model function
