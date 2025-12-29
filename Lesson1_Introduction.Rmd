@@ -19,6 +19,16 @@ The function prop_model implements a Bayesian model that assumes that:
 ```{r include=FALSE}
 source("SetUp_Code.R") #loading in packages and the prop_model function
 set.seed(123)
+
+knitr::opts_chunk$set(
+  echo = TRUE,
+  results = "hide",
+  message = FALSE,  # hide messages
+  warning = FALSE, # hide warnings
+  fig.show = "asis",
+  dev = "png",
+  fig.path = 'figures/'
+)
 ```
 
 Let’s start by seeing what happens when we run the model with no data.
