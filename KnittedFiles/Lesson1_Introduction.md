@@ -18,7 +18,7 @@ likely.
 Let’s start by seeing what happens when we run the model with no data.
 
 ``` r
-data <- c()
+data <- c() #empty data file
 prop_model(data)
 ```
 
