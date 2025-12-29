@@ -26,9 +26,7 @@ knitr::opts_chunk$set(
   echo = TRUE,
   message = FALSE,  # hide messages
   warning = FALSE, # hide warnings
-  fig.show = "asis",
-  dev = "png",
-  fig.path = 'KnittedFiles/figures/'
+  fig.show = "asis"
 )
 ```
 
