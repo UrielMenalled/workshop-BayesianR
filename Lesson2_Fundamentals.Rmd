@@ -15,7 +15,12 @@ knitr::opts_knit$set(base.dir = here::here("KnittedFiles"))
 
 # 2. Tell knitr to name the links simply "figures/plot.png"
 #    (This creates a relative link: ![](figures/plot.png))
-knitr::opts_chunk$set(fig.path = "figures/")
+knitr::opts_chunk$set(fig.path = "figures/",
+                      echo = TRUE,   # show code
+                      results = 'hide', # hide results/output
+                      message = FALSE,  # hide messages
+                      warning = FALSE   # hide warnings
+)
 ```
 
 ```{r include=FALSE}
