@@ -1,19 +1,29 @@
 ---
 title: "Bayesian data analysis in R: Working with Bayesian models"
 output: github_document
-knit: (function(input, encoding) {
-    rmarkdown::render(input, output_dir = "KnittedFiles")
-  })
 editor_options: 
   chunk_output_type: console
+knit: 
+  (function(input, encoding) {
+    rmarkdown::render(input, output_dir = "KnittedFiles")
+  })  
 ---
 
-Remember, the fundamental interest of a Bayesian approach is to use probabilities, which are defined by **prior** hypotheses and **posterior** corrections to prior hypotheses based on the data. You then work with probability distributions to describe and compare data. Working with probability distributions is based on taking large random samples of the probability distribution if this sample is large enough, each value will occur roughly proportionally often to how probable it is.
 ```{r include=FALSE}
-source("SetUp_Code.R") #loading in packages and the prop_model function
-set.seed(123)
+# 1. Tell knitr to physically save the images into the 'KnittedFiles' folder
+knitr::opts_knit$set(base.dir = here::here("KnittedFiles"))
+
+# 2. Tell knitr to name the links simply "figures/plot.png"
+#    (This creates a relative link: ![](figures/plot.png))
+knitr::opts_chunk$set(fig.path = "figures/")
 ```
 
+```{r include=FALSE}
+source("SetUp_Code.R") #loading in packages and the prop_model function
+set.seed(123) #Randomization set
+```
+
+Remember, the fundamental interest of a Bayesian approach is to use probabilities, which are defined by **prior** hypotheses and **posterior** corrections to prior hypotheses based on the data. You then work with probability distributions to describe and compare data. Working with probability distributions is based on taking large random samples of the probability distribution if this sample is large enough, each value will occur roughly proportionally often to how probable it is.
 
 To understand what fundamentally happening, let's start by doing a Bayesian analysis by hand. Let's assume we have an experiment with 2/13 successes, meaning we KNOW that the success rate is 15%
 ```{r L2.1}

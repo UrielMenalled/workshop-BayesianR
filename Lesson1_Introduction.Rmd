@@ -9,12 +9,6 @@ knit:
   })  
 ---
 
-Bayesian inference is a method for figuring out unknown quantities given some known facts. There are other inference methods that do this, but what makes Bayesian inference special is that it uses probability to describe the uncertainty. It’s really just about using probability, where probability is a number between 0 and 1. Fundamentally, what Bayesian analysis is doing is *updating* the probability distribution to reflect data.
-
-The function prop_model implements a Bayesian model that assumes that:
-- The data is a vector of successes and failures represented by 1s and 0s.
-- There is an unknown underlying proportion of success.
-- Prior to being updated with data, any underlying proportion of success is equally likely. 
 ```{r include=FALSE}
 # 1. Tell knitr to physically save the images into the 'KnittedFiles' folder
 knitr::opts_knit$set(base.dir = here::here("KnittedFiles"))
@@ -28,6 +22,13 @@ knitr::opts_chunk$set(fig.path = "figures/")
 source("SetUp_Code.R") #loading in packages and the prop_model function
 set.seed(123) #Randomization set
 ```
+
+Bayesian inference is a method for figuring out unknown quantities given some known facts. There are other inference methods that do this, but what makes Bayesian inference special is that it uses probability to describe the uncertainty. It’s really just about using probability, where probability is a number between 0 and 1. Fundamentally, what Bayesian analysis is doing is *updating* the probability distribution to reflect data.
+
+The function prop_model implements a Bayesian model that assumes that:
+- The data is a vector of successes and failures represented by 1s and 0s.
+- There is an unknown underlying proportion of success.
+- Prior to being updated with data, any underlying proportion of success is equally likely. 
 
 Let’s start by seeing what happens when we run the model with no data.
 ```{r L1.1}
