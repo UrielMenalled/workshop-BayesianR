@@ -6,8 +6,10 @@ knitr::opts_knit$set(output.dir = "KnittedFiles")
 # - hide code results (echo TRUE, fig.show = 'hold', results='hide')
 knitr::opts_chunk$set(
   echo = TRUE,
-  fig.show = "hold",
   results = "hide",
   message = FALSE,  # hide messages
-  warning = FALSE   # hide warnings
+  warning = FALSE, # hide warnings
+  fig.show = "asis",
+  dev = "png",
+  fig.path = "figures/"
 )
