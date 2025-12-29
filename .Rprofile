@@ -11,5 +11,6 @@ knitr::opts_chunk$set(
   warning = FALSE, # hide warnings
   fig.show = "asis",
   dev = "png",
-  fig.path = "figures/"
+  fig.path = 'figures/'
 )
+

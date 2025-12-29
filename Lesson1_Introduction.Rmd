@@ -1,9 +1,6 @@
 ---
 title: "Bayesian data analysis in R: Introduction"
 output: github_document
-knit: (function(input, encoding) {
-    rmarkdown::render(input, output_dir = "KnittedFiles")
-  })
 editor_options: 
   chunk_output_type: console
 ---
