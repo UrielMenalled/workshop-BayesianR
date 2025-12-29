@@ -16,6 +16,11 @@ The function prop_model implements a Bayesian model that assumes that:
 - There is an unknown underlying proportion of success.
 - Prior to being updated with data, any underlying proportion of success is equally likely. 
 ```{r include=FALSE}
+# 1. Tell knitr to physically save the images into the 'KnittedFiles' folder
+knitr::opts_knit$set(base.dir = here::here("KnittedFiles"))
+
+# 2. Tell knitr to name the links simply "figures/plot.png"
+#    (This creates a relative link: ![](figures/plot.png))
 knitr::opts_chunk$set(fig.path = "figures/")
 ```
 
